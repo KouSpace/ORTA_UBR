@@ -6,15 +6,19 @@
  Zmax=0; Vmax=0;
  Ax=0;   Az=9.801;
 %Hız, Konum, İvme denklerimi için sıfır matrisi- 
-% tanımlanarak ilk değerleri atandı
+% tanımlanarak ilk değerleri atandı.
+% x,z üzerindeki ivme matrisinin oluşturuldu.
  A=zeros(1,1);       
  A(1,1)=Ax;             
  A(2,1)=Az;
 
+ % x,z üzerindeki konum vektörü oluşturuldu.Başta roket yerde olduğu için 
+% değer [0,0] atandı.
  R=[0;0];
  Rz=R(2,1);
  Rx=R(1,1);
-
+ 
+% Hız vektörü oluşturuldu.
  V=zeros(1,1);
  V(1,1)=V_0*cosd(theta);
  V(2,1)=-V_0*sind(theta);   %Uçuş -z ekseninde gerçekleştiği için
@@ -24,24 +28,29 @@
  i=0;      
  %Roket yörüngesini hesaplayabilmek için Euler Metodu ile Konum 
  %ve Hız değerleri hesaplanarak dinamik bir dizi içerisine atama yapıldı
- while (Vz<0 || Rz<=0)  
+ while (Vz<0 || Rz<=0)
+ % Euler yöntemi yardımıyla hız ve konum bilgisi alındı.
      i=i+1;             
      V = V + A*dt;
      R = R + V*dt;
      t = t+dt;          
      Vz=V(2,1);
      Rz=R(2,1); Rx=R(1,1);
+     % Alınan hız ve konum bilgileri tutulur.
      RZ(i,1)=Rz;  RX(i,1)=Rx; 
      VZ(i,1)=Vz;
      if (abs(Rz) > abs(Zmax))
-        Zmax=Rz;
+        Zmax=Rz; % Apogee hesaplanır.
      end
+     % Max hızı hesaplanır.
      if (Vz > Vmax)
         Vmax=Vz;
      end
  end
- plot(RX,abs(RZ),'b')   
+ % Grafik oluşturulur.
+ plot(RX,abs(RZ),'b') % Konum-zaman grafiği çizilir.
+ % Grafiğe etiketler eklenir.
  xlabel ('Menzil[m]')
  ylabel ('Yükseklik[m]')
  title('Yörünge Grafiği')
- grid on
+ grid on % Grafiğe ızgara eklenir.
