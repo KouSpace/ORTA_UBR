@@ -44,6 +44,7 @@
 
      if (abs(Rz) > abs(Zmax))
         Zmax=Rz; % Apogee nok. hesaplandı.
+        t
      end
      if (Vz > Vmax)
          Vmax=Vz;    % Max hız hesaplandı.
