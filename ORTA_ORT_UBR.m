@@ -41,18 +41,19 @@
      % Alınan hız ve konum bilgileri dinamik dizide tutuldu.
      RZ(i,1)=Rz;  RX(i,1)=Rx; 
      VZ(i,1)=Vz;
+     VX(i,1)=Vx;
 
      if (abs(Rz) > abs(Zmax))
         Zmax=Rz; % Apogee nok. hesaplandı.
-        t
      end
      if (Vz > Vmax)
          Vmax=Vz;    % Max hız hesaplandı.
      end
  end
  
- plot(RX,abs(RZ),'b') % Konum-zaman grafiği çizildi.
+ plot(RX,abs(RZ)) % Konum-zaman grafiği çizildi.
  xlabel ('Menzil[m]')
  ylabel ('Yükseklik[m]')
- title('Yörünge Grafiği')
+ title('Roket Yörünge Grafiği')
+ legend('Roket')
  grid on
