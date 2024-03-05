@@ -51,7 +51,7 @@
      end
  end
  
- plot(RX,abs(RZ)) % Konum-zaman grafiği çizildi.
+ plot(RX,abs(RZ),'LineWidth',1.5) % Konum-zaman grafiği çizildi.
  xlabel ('Menzil[m]')
  ylabel ('Yükseklik[m]')
  title('Roket Yörünge Grafiği')
