@@ -24,6 +24,6 @@ ylabel ('hava-yoğunluğu[kg/m3]');
 figure (2)
 plot(yukseklik,c);
 xlabel ('yükseklik[m]');
-ylabel ('ses_hızı[m/s]');
+ylabel ('ses-hızı[m/s]');
 
 
