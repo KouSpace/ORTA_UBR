@@ -28,7 +28,6 @@ Rx(1)=0;
 
 ITKI=xlsread('veri_itki_F_2022.xlsx','M2500T','B1:B424');
 Cd=xlsread('drag_export.xlsx','A1:A518');
-
 pi=3.14;
 Diameter=0.14;
 Alan=pi*(Diameter/2)^2;
