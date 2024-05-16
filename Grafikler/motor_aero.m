@@ -30,6 +30,6 @@ figure;
 plot(TIME, mass);
 grid on;
 grid minor;
-title('Roket Kütle Değişimi');
+title('M2500T Roket Kütle Değişimi');
 xlabel('Zaman (s)');
 ylabel('Kütle (kg)');
